@@ -13,8 +13,6 @@ webSocketServer.on("connection", (webSocket) => {
 
 function broadcast(data) {
   webSocketServer.clients.forEach((client) => {
-    if (client.readyState === WebSocket.OPEN) {
-      client.send(data);
-    }
+    client.send(data);
   });
 }
