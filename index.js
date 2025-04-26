@@ -4,8 +4,8 @@ const webSocketServer = new WebSocket.Server({
   port: process.env.PORT || 4000,
 });
 
-webSocketServer.on("connection", (webSocket) => {
-  webSocket.on("message", (message) => {
+webSocketServer.on("connection", (webSocketConnection) => {
+  webSocketConnection.on("message", (message) => {
     console.log("Received:", message);
     broadcast(message);
   });
