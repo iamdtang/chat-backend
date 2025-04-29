@@ -11,8 +11,8 @@ webSocketServer.on("connection", (webSocketConnection) => {
   });
 });
 
-function broadcast(data) {
+function broadcast(message) {
   webSocketServer.clients.forEach((client) => {
-    client.send(data);
+    client.send(message);
   });
 }
